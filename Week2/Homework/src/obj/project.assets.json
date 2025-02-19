@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/kadetanke/.nuget/packages/": {}
+    "C:\\Users\\Kade\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework/src/src.csproj",
+      "projectUniqueName": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework/src/src.csproj",
-      "packagesPath": "/Users/kadetanke/.nuget/packages/",
-      "outputPath": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework/src/obj/",
+      "projectPath": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework\\src\\src.csproj",
+      "packagesPath": "C:\\Users\\Kade\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/kadetanke/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Kade\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/kadetanke/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Kade\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

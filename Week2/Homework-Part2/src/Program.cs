@@ -26,12 +26,47 @@
  * Output: Bob is not in the phonebook.
  * 
  */
+// int[] array6 = input.Split(",").Select(x => int.Parse(x)).ToArray();
 
+using System.Net.NetworkInformation;
+using System.Text.Json.Serialization;
 
+int exit = 0;
+Dictionary<string, string> contacts = new Dictionary<string, string>();
+contacts.Add("John", "515-555-6666");
 
-
-
-
+do
+{
+    Console.WriteLine("Welcome to your contact book. Enter a command: " +
+                      "\n1. New contact " +
+                      "\n2. Search " +
+                      "\n3. Exit: ");
+    int command = Int32.Parse(Console.ReadLine());
+    switch (command)
+    {
+        case 1:
+            Console.WriteLine("Enter a name and phone number seperated by a comma: ");
+            string newContact = Console.ReadLine();
+            var newInput = newContact.Split(",");
+            contacts.Add(newInput[0], newInput[1]);
+            break;
+        case 2:
+            Console.WriteLine("Enter a name to search:");
+            string name = Console.ReadLine();
+            bool nameExists = contacts.ContainsKey(name);
+            if (nameExists == true)
+            {
+                string found = contacts.GetValueOrDefault(name);
+                Console.WriteLine($"{name}'s phone number is {found}");
+            }
+            else Console.WriteLine($"{name} is not in your contacts");
+            break;
+        case 3:
+            exit = 1;
+            Console.WriteLine("Exiting...");
+            break; 
+    }
+} while (exit == 0);
 
 
 
@@ -51,16 +86,30 @@
  *      world : 2
  *      C# : 1
  */
+/*List<string> inputList = new List<string>();
+Console.WriteLine("Input:");
+string inputs = Console.ReadLine();
+inputList = inputs.Split(" ").ToList();
+HashSet<string> words = new HashSet<string>();
+foreach (var i in inputList)
+{
+    words.Add(i);
+}
+int count = words.Count;
+for (int i = 0; i < count; i++)
+{
+    List<string> word1 = inputList.FindAll(x => x == inputList[i]);
+    int length = word1.Count;
+    string word = inputList[i];
+    Console.WriteLine($"{word} apppears {length} times");
+    inputList.RemoveAll(x => x == word);
+    count = inputList.Count;
+    i = i - 1;
+}*/
+//I got distracted and did without using dictionary, I am moving on but will come back and fix when I have time
 
 
-
-
-
-
-
-
- 
- /* Problem 3
+/* Problem 3
   *
   * Write a program that manages an inventory system.
   * The program should allow the user to enter a series of commands to manage products in stock.
@@ -97,8 +146,56 @@
   * 
   *
   */
- 
- 
+bool exitCode = false;
+Dictionary<string, int> inventory = new Dictionary<string, int>();
+inventory.Add("apple", 5);
+do
+{
+    Console.WriteLine($"Welcome to the inventory management system. Enter a command to continue:" +
+                      $"\n ADD" +
+                      $"\n REMOVE" +
+                      $"\n SHOW" +
+                      $"\n EXIT");
+    string command = Console.ReadLine();
+    switch (command)
+    {
+        case "ADD":
+            Console.WriteLine("Enter a product name and quantity seperated by a space: ");
+            var addItem = Console.ReadLine();
+            var adds = addItem.Split(" ");
+            if (inventory.ContainsKey(adds[0]))
+            {
+                int current = inventory.GetValueOrDefault(adds[0]);
+                int plusAmt = int.Parse(adds[1]);
+                int newAmt = current + plusAmt;
+                adds[1] = newAmt.ToString();
+                inventory.Remove(adds[0]);
+                inventory.Add(adds[0], int.Parse(adds[1]));
+            }
+            else inventory.Add(adds[0],int.Parse(adds[1]));
+            break;
+        case "REMOVE":
+            Console.WriteLine("Enter a product name to remove: ");
+            string remove = Console.ReadLine();
+            inventory.Remove(remove);
+            break;
+        case "SHOW":
+            foreach (var i in inventory)
+            {
+                Console.WriteLine($"\n{i.Key}(s): {i.Value}");
+            }
+            break;
+        case "EXIT":
+            Console.WriteLine("Exiting...");
+            exitCode = true; 
+            break;
+        case "4": //personal use
+            exitCode = true;
+            break;
+    }
+} while (exitCode == false);
+
+
  
  
  
@@ -125,8 +222,22 @@
  * Sorted Unique Numbers: -3 5 7 10
  * 
  */
-
-
+Console.WriteLine($"Enter numbers seperated by a space:");
+string numbers = Console.ReadLine();
+HashSet<string> numberHash = numbers.Split(" ").ToHashSet();
+int unique = numberHash.Count;
+bool has10 = numberHash.Contains("10");
+List<int> numbersList = new List<int>();
+foreach (string i in numberHash)
+{
+    int x = int.Parse(i);
+    numbersList.Add(x);
+}
+numbersList.Sort();
+string num = String.Join(" ", numbersList);
+Console.WriteLine($"\nUnique numbers: {unique}" +
+                  $"\nContains 10: {has10}" +
+                  $"\nSorted Unique Numbers: {num}");
 
 
 
