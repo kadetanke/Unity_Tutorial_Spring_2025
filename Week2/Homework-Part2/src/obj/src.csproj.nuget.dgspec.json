@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework-Part2\\src\\src.csproj": {}
+    "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework-Part2/src/src.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework-Part2\\src\\src.csproj": {
+    "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework-Part2/src/src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework-Part2\\src\\src.csproj",
+        "projectUniqueName": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework-Part2/src/src.csproj",
         "projectName": "src",
-        "projectPath": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework-Part2\\src\\src.csproj",
-        "packagesPath": "C:\\Users\\Kade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kade\\Documents\\GitHub\\Unity_Tutorial_Spring_2025\\Week2\\Homework-Part2\\src\\obj\\",
+        "projectPath": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework-Part2/src/src.csproj",
+        "packagesPath": "/Users/kadetanke/.nuget/packages/",
+        "outputPath": "/Users/kadetanke/Documents/GitHub/Unity_Tutorial_Spring_2025/Week2/Homework-Part2/src/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kade\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/kadetanke/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Kade\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/kadetanke/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

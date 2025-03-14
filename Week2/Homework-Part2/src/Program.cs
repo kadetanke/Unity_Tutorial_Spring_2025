@@ -369,8 +369,27 @@
    1 2 3 4 5 6 7 8
  * 
  */
+LinkedList<int> list1 = new LinkedList<int>();
+list1.AddLast(1);
+list1.AddLast(4);
+list1.AddLast(5);
+list1.AddLast(7); // [1,4,5,7]
+LinkedList<int> list2 = new LinkedList<int>();
+list2.AddLast(2);
+list2.AddLast(3);
+list2.AddLast(6);
+list2.AddLast(8); // [2,3,6,8] combined should be [1,2,3,5,6,7,8]
+foreach (int i in list2)
+{
+  if (list1.Contains(i))
+  LinkedListNode<int> oneAbove = list1.Find(i+1);
+  list1.AddBefore(oneAbove, i);
+}
 
-
+foreach (var q in list1)
+{
+  Console.WriteLine(String.Join(" ", list1));
+}
 
 
 
@@ -409,25 +428,66 @@
 // Console.WriteLine($"String reversed: {outtt}");
 //
 //
-/* Problem 2
- *
- * Write a program that checks whether a given string of parentheses is balanced or not.
- * A string is balanced if every opening ( has a corresponding closing ), and they appear in the correct order.
- *
- * Example 1
- *
- * Input: Enter a string: (())()
- * Output: Balanced
- *
- * Example 2
- *
- * Input: Enter a string: ()(()
- * Output: Not Balanced
- * 
- */
-
-
-
+// /* Problem 2
+//  *
+//  * Write a program that checks whether a given string of parentheses is balanced or not.
+//  * A string is balanced if every opening ( has a corresponding closing ), and they appear in the correct order.
+//  *
+//  * Example 1
+//  *
+//  * Input: Enter a string: (())()
+//  * Output: Balanced
+//  *
+//  * Example 2
+//  *
+//  * Input: Enter a string: ()(()
+//  * Output: Not Balanced
+//  * 
+//  */
+// Console.WriteLine("Enter a string of (): ");
+// string parentheses = Console.ReadLine();
+// List<string> parenthList = parentheses.Select(x => x.ToString()).ToList();
+// Stack<string> parenth = new Stack<string>();
+// foreach (string i in parenthList)
+// {
+//   parenth.Push(i);
+// }
+// bool open = false;
+// bool openBack = false;
+// int openCount = 0;
+// int closeCount = 0;
+// while (parenth.Count > 0)
+// {
+//   string j = parenth.Pop();
+//   if (j == ")" && open == false)
+//   {
+//     open = true;
+//     openCount++;
+//   }
+//   else if (j == "(" && open == true)
+//   {
+//     open = false;
+//     closeCount++;
+//   }
+//   else if (j == "(" && open == false)
+//   {
+//     openBack = false;
+//     closeCount++;
+//   }
+//   else if (j == ")" && open == true)
+//   {
+//     openBack = true;
+//     openCount++;
+//   }
+// }
+//
+// if (open == true || openBack == true || openCount!=closeCount)
+// {
+//   Console.WriteLine("Not Balanced");
+// }
+// else Console.WriteLine("Balanced");
+//
+// // I think this works, do not really know I feel like I added way too many checks
 
 
 
@@ -444,16 +504,16 @@
  * Console.WriteLine(IsEven(7));  // Output: False
  * 
  */
-bool isEven(int number)
-{
-    if (number % 2 == 0)
-    {
-        return true;
-    }
-    else return false;
-}
-
-Console.WriteLine(isEven(10)); //true
+// bool isEven(int number)
+// {
+//     if (number % 2 == 0)
+//     {
+//         return true;
+//     }
+//     else return false;
+// }
+//
+// Console.WriteLine(isEven(10)); //true
 
 
 
@@ -480,8 +540,14 @@ Console.WriteLine(isEven(10)); //true
  
  * 
  */
-
-
+// void PrintLine(string inp, string seperator = "-")
+// {
+//   Console.WriteLine($"{inp} " +
+//                     $"\n{seperator}{seperator}{seperator}{seperator}{seperator}{seperator}{seperator}{seperator}");
+// }
+//
+//
+// PrintLine("C# is fun!");
 
 
 
@@ -498,14 +564,19 @@ Console.WriteLine(isEven(10)); //true
  *
  * 
  */
-
-
-
+// int FindMax(int[] arr)
+// {
+//   int max = arr.Max();
+//   return max;
+// }
+// int[] arr = {3, 8, 1, 9, 5};
+// Console.WriteLine(FindMax(arr));
 
 
 /* Problem 4
  *
- * Write a function CensorWord that takes a string sentence, a string wordToCensor, and an optional parameter.
+ * Write a function CensorWord that takes a string sentence,
+ * a string wordToCensor, and an optional parameter.
  * The function prints the sentence with the word replaced by the mask.
  *
  * Example 1
@@ -517,4 +588,16 @@ Console.WriteLine(isEven(10)); //true
  *
  * CensorWord("C# is great", "great", '#');
  * Output: C# is #####
- */ 
+ */
+// void CensorWord(string sentence, string wordToCensor, string mask = "****")
+// {
+//   List<string> inSentence = sentence.Split(" ").ToList();
+//   int wordIndex = inSentence.IndexOf(wordToCensor);
+//   mask = mask + mask + mask + mask;
+//   
+//   inSentence.Insert(wordIndex, mask);
+//   inSentence.RemoveAt(wordIndex+1);
+//   sentence = string.Join(" ", inSentence);
+//   Console.WriteLine(sentence);
+// }
+// CensorWord("I love programming", "love", "#");
